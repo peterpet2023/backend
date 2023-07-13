@@ -21,9 +21,9 @@ public class DesignReq {
 
         @ApiModelProperty(name="디자인코드",example="1")
         private Long designCode;
-        @ApiModelProperty(name="디자인제목",example="슈퍼맨의상")
+        @ApiModelProperty(name="디자인제목",example="슈퍼맨 의상")
         private String designTitle;
-        @ApiModelProperty(name="디자이너이름",example="탐쿠루주")
+        @ApiModelProperty(name="디자이너이름",example="탐 쿠루주")
         private String designerName;
         @ApiModelProperty(name="업로드날짜",example="2023-07-14")
         private Date uploadDate;
@@ -48,6 +48,13 @@ public class DesignReq {
     @NoArgsConstructor @AllArgsConstructor
     @ToString
     public static class deleteDesignReq{
+        private String desingCode;
+    }
+
+    @Getter @Setter
+    @NoArgsConstructor @AllArgsConstructor
+    @ToString
+    public static class designCountReq{
         private String desingCode;
     }
 

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Getter
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Table(name="DESIGN_TBL")
 @ToString

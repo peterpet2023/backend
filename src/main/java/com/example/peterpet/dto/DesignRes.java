@@ -15,13 +15,13 @@ public class DesignRes {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class selectAllDesign{
-        private List<selectOneDesign> selectAllDesign;
+    public static class selectAllDesignRes{
+        private List<selectOneDesignRes> selectAllDesign;
     }
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
-    public static class selectOneDesign{
+    public static class selectOneDesignRes{
         private Long designCode;
         private String designTitle;
         private String designerName;
@@ -34,7 +34,7 @@ public class DesignRes {
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
-    public static class insertDesign{
+    public static class insertDesignRes{
         private Long designCode;
         private String designTitle;
         private String designerName;
@@ -47,7 +47,20 @@ public class DesignRes {
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
-    public class deleteDesign {
+    public class deleteDesignRes {
+        private Long designCode;
+        private String designTitle;
+        private String designerName;
+        private Date uploadDate;
+        private String designImage1;
+        private String designImage2;
+        private String designImage3;
+        private int designCount;
+    }
+
+    @Getter @Setter
+    @NoArgsConstructor @AllArgsConstructor
+    public class designCountRes {
         private Long designCode;
         private String designTitle;
         private String designerName;

@@ -20,28 +20,28 @@ public class DesignController {
 
     //전체 디자인 조회
     @ApiOperation(value="디자인 전체 조회API", notes ="모든 디자인 정보를 조회할 수 있다.")
-    @Tag(name="member")
+    @Tag(name="design")
     @GetMapping("/select")
-    public BaseResponse<DesignRes.selectAllDesign> selectAllMember(){
-        DesignRes.selectAllDesign result = designService.selectAllDesign();
+    public BaseResponse<DesignRes.selectAllDesignRes> selectAllMember(){
+        DesignRes.selectAllDesignRes result = designService.selectAllDesign();
         return BaseResponse.ok(HttpStatus.OK,"전체 디자인 조회 성공", result);
     }
 
     //디자인 제목으로 조회 (검색)
     @ApiOperation(value="디자인제목으로 조회API", notes ="디자인 제목으로 디자인을 조회할 수 있다.")
-    @Tag(name="member")
+    @Tag(name="design")
     @GetMapping("/select/{designTitle}")
-    public BaseResponse<DesignRes.selectOneDesign> selectOneMemberByDesignTitle(@PathVariable String designTitle){
-        DesignRes.selectOneDesign result = designService.selectOneDesignByDesignTitle(designTitle);
+    public BaseResponse<DesignRes.selectOneDesignRes> selectOneMemberByDesignTitle(@PathVariable String designTitle){
+        DesignRes.selectOneDesignRes result = designService.selectOneDesignByDesignTitle(designTitle);
         System.out.println("controller result : " + result);
         return  BaseResponse.ok(HttpStatus.OK,"회원Code로 조회 성공", result);
     }
 
     //디자인 insert, update
     @ApiOperation(value="디자인 업데이트API", notes ="디자인을 등록하거나 이미 업로드된 디자인 게시물을 수정할 수 있다.")
-    @Tag(name="member")
+    @Tag(name="design")
     @PostMapping("/update")
-    public BaseResponse<DesignRes.insertDesign> insertDesing(@RequestBody DesignReq.insertDesignReq info){
+    public BaseResponse<DesignRes.insertDesignRes> insertDesign(@RequestBody DesignReq.insertDesignReq info){
         System.out.println("controller insert info : " + info);
         designService.insertDesign(info);
         return BaseResponse.ok(HttpStatus.OK, "회원 정보 입력 성공");
@@ -49,13 +49,20 @@ public class DesignController {
 
     //디자인 delete
     @ApiOperation(value="디자인 삭제API", notes ="삭제하고 싶은 디자인의 디자인코드를 URL로 전달하면 삭제할 수 있다.")
-    @Tag(name="member")
+    @Tag(name="design")
     @DeleteMapping("/delete/{designCode}")
-    public BaseResponse<DesignRes.deleteDesign> deleteDesignByDesignCode(@PathVariable Long designCode){
+    public BaseResponse<DesignRes.deleteDesignRes> deleteDesignByDesignCode(@PathVariable Long designCode){
         designService.deleteDesignByDesignCode(designCode);
         return BaseResponse.ok(HttpStatus.OK,"디자인코드로 삭제 성공");
     }
 
-    //merge 확인하기
+    //사용 횟수 증가
+    @ApiOperation(value="디자인 사용횟수 증가API", notes ="디자인이 사용되었을 때 count증가시키기 위해 사용될 수 있다.")
+    @Tag(name="design")
+    @PostMapping("/count/{designCode}")
+    public BaseResponse<DesignRes.designCountRes> designCount(@PathVariable Long designCode) throws Exception {
+        designService.designCount(designCode);
+        return BaseResponse.ok(HttpStatus.OK, "디자인 사용 횟수 증가 성공");
+    }
 
 }
