@@ -29,8 +29,8 @@ public class MemberService {
         return result;
     }
 
-    public MemberRes.selectOneMember selectOneMemberByMemberId(String memberId) {
-        MemberRes.selectOneMember result = modelMapper.map(memberRepository.findByMemberId(memberId),MemberRes.selectOneMember.class);
+    public MemberRes.selectOneMember selectOneMemberByMemberCode(Long memberCode) {
+        MemberRes.selectOneMember result = modelMapper.map(memberRepository.findByMemberCode(memberCode),MemberRes.selectOneMember.class);
         return result;
     }
 

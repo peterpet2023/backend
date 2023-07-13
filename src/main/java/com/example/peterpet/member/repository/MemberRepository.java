@@ -7,7 +7,8 @@ import javax.transaction.Transactional;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    Member findByMemberId(String memberId);
+
+    Member findByMemberCode(Long memberCode);
 
     @Transactional
     void deleteByMemberId(String memberId);
