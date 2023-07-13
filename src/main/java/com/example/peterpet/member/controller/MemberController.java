@@ -5,8 +5,6 @@ import com.example.peterpet.dto.MemberReq;
 import com.example.peterpet.dto.MemberRes;
 import com.example.peterpet.member.service.MemberService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,11 +17,6 @@ import org.springframework.web.bind.annotation.*;
 public class MemberController {
 
     private final MemberService memberService;
-
-    @ApiResponses({
-            @ApiResponse(code=200,message="success"),
-            @ApiResponse(code=404,message="Not found")
-    })
 
     //전체 회원 조회
     @ApiOperation(value="member table 전체 조회API", notes ="모든 회원 정보를 조회 할 경우 사용")
