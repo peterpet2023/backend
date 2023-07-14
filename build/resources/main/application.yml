@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@database-plz.cfyrjybdvmyk.ap-northeast-2.rds.amazonaws.com:1521/orcl
-    username: admin
-    password: zx99185781
+    url: ${{ DATASOURCE_URL }}
+    username: ${{ DATASOURCE_USERNAME }}
+    password: ${{ DATASOURCE_PASSWORD }}
 
   mvc:
     pathmatch:
