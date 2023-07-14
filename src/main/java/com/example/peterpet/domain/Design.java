@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Getter
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Table(name="DESIGN_TBL")
 @ToString
@@ -30,5 +30,10 @@ public class Design {
     private String designImage3;
     @Column
     private int designCount;
+    @Column
+    private int designPrice;
+    @Column
+    private String designCategory;
+
 
 }
