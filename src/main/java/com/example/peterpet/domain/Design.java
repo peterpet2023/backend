@@ -1,7 +1,6 @@
 package com.example.peterpet.domain;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -31,9 +30,12 @@ public class Design {
     @Column
     private int designCount;
     @Column
+    private String designCategory;
+    @Column
     private int designPrice;
     @Column
-    private String designCategory;
-
+    private int designPriceLower;
+    @Column
+    private int designPriceUpper;
 
 }

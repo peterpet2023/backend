@@ -34,15 +34,17 @@ public class DesignReq {
         private String designImage3;
         @ApiModelProperty(name="사용된횟수",example="50")
         private int designCount;
-        private int designPrice;
         private String designCategory;
+        private int designPrice;
+        private int designPriceLower;
+        private int designPriceUpper;
 
 
         public Design toEntity(){
             return Design.builder().designCode(designCode).designTitle(designTitle).designerName(designerName)
                     .uploadDate(uploadDate).designImage1(designImage1).designImage2(designImage2)
-                    .designImage3(designImage3).designCount(designCount)
-                    .designPrice(designPrice).designCategory(designCategory).build();
+                    .designImage3(designImage3).designCount(designCount).designCategory(designCategory)
+                    .designPrice(designPrice).designPriceLower(designPriceLower).designPriceUpper(designPriceUpper).build();
         };
     }
 
