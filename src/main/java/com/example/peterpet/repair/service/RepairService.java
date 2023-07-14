@@ -1,9 +1,5 @@
-package com.example.peterpet.order.service;
+package com.example.peterpet.repair.service;
 
-import com.example.peterpet.design.repository.DesignRepository;
-import com.example.peterpet.domain.Design;
-import com.example.peterpet.dto.DesignReq;
-import com.example.peterpet.dto.DesignRes;
 import com.example.peterpet.dto.OrderReq;
 import com.example.peterpet.dto.OrderRes;
 import com.example.peterpet.order.repository.OrderRepository;
@@ -16,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class OrderService {
+public class RepairService {
 
     private final OrderRepository orderRepository;
     private final ModelMapper modelMapper;
