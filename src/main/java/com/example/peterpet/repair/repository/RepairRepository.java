@@ -1,4 +1,4 @@
-package com.example.peterpet.order.repository;
+package com.example.peterpet.repair.repository;
 
 import com.example.peterpet.domain.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface RepairRepository extends JpaRepository<Order, Long> {
 
     List<Order> findAllByOrderMemberCode(int orderMemberCode);
 }

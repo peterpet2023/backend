@@ -5,15 +5,17 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Table(name = "ORDER_TBL")
-@Builder
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@Table(name="ORDER_TBL")
 @ToString
-@NoArgsConstructor @AllArgsConstructor
+@Builder
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderCode;
+
     @Column
     private int orderMemberCode;
     @Column

@@ -1,9 +1,6 @@
-package com.example.peterpet.order.controller;
+package com.example.peterpet.repair.controller;
 
 import com.example.peterpet.base.BaseResponse;
-import com.example.peterpet.design.service.DesignService;
-import com.example.peterpet.dto.DesignReq;
-import com.example.peterpet.dto.DesignRes;
 import com.example.peterpet.dto.OrderReq;
 import com.example.peterpet.dto.OrderRes;
 import com.example.peterpet.order.service.OrderService;
@@ -13,17 +10,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@Tag(name="order", description = "order CRUD")
+@Tag(name="repair", description = "repair CRUD")
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/repair")
 @RequiredArgsConstructor
-public class OrderController {
+public class RepairController {
 
     private final OrderService orderService;
 
-    //전체 주문 조회
-    @ApiOperation(value="주문 전체 조회API", notes ="모든 주문 정보를 조회할 수 있다.")
-    @Tag(name="order")
+    //수선집 전체 조회
+    @ApiOperation(value="수선집 전체 조회API", notes ="모든 수선집 정보를 조회할 수 있다.")
+    @Tag(name="repair")
     @GetMapping("/select")
     public BaseResponse<OrderRes.selectAllOrderRes> selectAllOrder(){
         OrderRes.selectAllOrderRes result = orderService.selectAllOrder();
