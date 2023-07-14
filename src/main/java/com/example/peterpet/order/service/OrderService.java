@@ -1,7 +1,6 @@
 package com.example.peterpet.order.service;
 
-import com.example.peterpet.dto.MemberRes;
-import com.example.peterpet.dto.OrderReq;
+import com.example.peterpet.dto.DesignRes;
 import com.example.peterpet.dto.OrderRes;
 import com.example.peterpet.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
