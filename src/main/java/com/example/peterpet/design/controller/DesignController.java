@@ -56,7 +56,6 @@ public class DesignController {
         return  BaseResponse.ok(HttpStatus.OK,"디자인가격으로 조회 성공", result);
     }
 
-
     //디자인 insert, update
     @ApiOperation(value="디자인 업데이트API", notes ="디자인을 등록하거나 이미 업로드된 디자인 게시물을 수정할 수 있다.")
     @Tag(name="design")
@@ -76,7 +75,7 @@ public class DesignController {
         return BaseResponse.ok(HttpStatus.OK,"디자인코드로 삭제 성공");
     }
 
-    //사용 횟수 증가
+    //사용된 횟수 증가
     @ApiOperation(value="디자인 사용횟수 증가API", notes ="디자인이 사용되었을 때 count증가시키기 위해 사용될 수 있다.")
     @Tag(name="design")
     @PostMapping("/count/{designCode}")

@@ -11,8 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class DesignRes {
 
-    @Getter
-    @Setter
+    @Getter @Setter
     @NoArgsConstructor
     @AllArgsConstructor
     public static class selectAllDesignRes{
@@ -30,8 +29,10 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
-        private int designPrice;
         private String designCategory;
+        private int designPrice;
+        private int designPriceLower;
+        private int designPriceUpper;
     }
 
     @Getter @Setter
@@ -45,8 +46,10 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
-        private int designPrice;
         private String designCategory;
+        private int designPrice;
+        private int designPriceLower;
+        private int designPriceUpper;
     }
 
     @Getter @Setter
@@ -60,8 +63,10 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
-        private int designPrice;
         private String designCategory;
+        private int designPrice;
+        private int designPriceLower;
+        private int designPriceUpper;
     }
 
     @Getter @Setter
@@ -75,7 +80,9 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
-        private int designPrice;
         private String designCategory;
+        private int designPrice;
+        private int designPriceLower;
+        private int designPriceUpper;
     }
 }
