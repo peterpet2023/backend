@@ -30,12 +30,32 @@ public class DesignController {
     //디자인 제목으로 조회 (검색)
     @ApiOperation(value="디자인제목으로 조회API", notes ="디자인 제목으로 디자인을 조회할 수 있다.")
     @Tag(name="design")
-    @GetMapping("/select/{designTitle}")
-    public BaseResponse<DesignRes.selectOneDesignRes> selectOneMemberByDesignTitle(@PathVariable String designTitle){
-        DesignRes.selectOneDesignRes result = designService.selectOneDesignByDesignTitle(designTitle);
-        System.out.println("controller result : " + result);
-        return  BaseResponse.ok(HttpStatus.OK,"회원Code로 조회 성공", result);
+    @GetMapping("/select/designTitle/{designTitle}")
+    public BaseResponse<DesignRes.selectAllDesignRes> selectOneDesignByDesignTitle(@PathVariable String designTitle){
+        String likeDesignTitle = "%"+designTitle+"%";
+        DesignRes.selectAllDesignRes result = designService.selectAllDesignByDesignTitle(likeDesignTitle);
+        return  BaseResponse.ok(HttpStatus.OK,"디자인제목으로 조회 성공", result);
     }
+
+    //디자인 카테고리로 조회(검색)
+    @ApiOperation(value="디자인카테고리로 조회API", notes ="디자인의 카테고리로 디자인을 조회할 수 있다.")
+    @Tag(name="design")
+    @GetMapping("/select/designCategory/{designCategory}")
+    public BaseResponse<DesignRes.selectAllDesignRes> selectAllDesignByDesignCategory(@PathVariable String designCategory){
+        String likeDesignCategory = "%" + designCategory + "%";
+        DesignRes.selectAllDesignRes result = designService.selectAllDesignByDesignCategory(likeDesignCategory);
+        return  BaseResponse.ok(HttpStatus.OK,"디자인카테고리로 조회 성공", result);
+    }
+
+    //디자인 가격으로 조회(가격 범위 선택)
+    @ApiOperation(value="디자인가격으로 조회API", notes ="디자인의 가격으로 디자인을 조회할 수 있다.")
+    @Tag(name="design")
+    @GetMapping("/select/designPrice/{designPriceLower}/{designPriceUpper}")
+    public BaseResponse<DesignRes.selectAllDesignRes> selectAllDesignByDesignPrice(@PathVariable int designPriceLower,@PathVariable int designPriceUpper){
+        DesignRes.selectAllDesignRes result = designService.selectAllDesignByDesignPrice(designPriceLower, designPriceUpper);
+        return  BaseResponse.ok(HttpStatus.OK,"디자인가격으로 조회 성공", result);
+    }
+
 
     //디자인 insert, update
     @ApiOperation(value="디자인 업데이트API", notes ="디자인을 등록하거나 이미 업로드된 디자인 게시물을 수정할 수 있다.")
@@ -44,7 +64,7 @@ public class DesignController {
     public BaseResponse<DesignRes.insertDesignRes> insertDesign(@RequestBody DesignReq.insertDesignReq info){
         System.out.println("controller insert info : " + info);
         designService.insertDesign(info);
-        return BaseResponse.ok(HttpStatus.OK, "회원 정보 입력 성공");
+        return BaseResponse.ok(HttpStatus.OK, "디자인 정보 입력 성공");
     }
 
     //디자인 delete

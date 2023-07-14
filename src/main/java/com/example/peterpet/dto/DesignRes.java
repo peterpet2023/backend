@@ -30,6 +30,8 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
+        private int designPrice;
+        private String designCategory;
     }
 
     @Getter @Setter
@@ -43,6 +45,8 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
+        private int designPrice;
+        private String designCategory;
     }
 
     @Getter @Setter
@@ -56,6 +60,8 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
+        private int designPrice;
+        private String designCategory;
     }
 
     @Getter @Setter
@@ -69,5 +75,7 @@ public class DesignRes {
         private String designImage2;
         private String designImage3;
         private int designCount;
+        private int designPrice;
+        private String designCategory;
     }
 }

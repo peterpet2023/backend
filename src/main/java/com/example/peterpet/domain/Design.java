@@ -30,5 +30,10 @@ public class Design {
     private String designImage3;
     @Column
     private int designCount;
+    @Column
+    private int designPrice;
+    @Column
+    private String designCategory;
+
 
 }

@@ -1,7 +1,6 @@
 package com.example.peterpet.dto;
 
 import com.example.peterpet.domain.Design;
-import com.example.peterpet.domain.Member;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -35,12 +34,15 @@ public class DesignReq {
         private String designImage3;
         @ApiModelProperty(name="사용된횟수",example="50")
         private int designCount;
+        private int designPrice;
+        private String designCategory;
 
 
         public Design toEntity(){
             return Design.builder().designCode(designCode).designTitle(designTitle).designerName(designerName)
                     .uploadDate(uploadDate).designImage1(designImage1).designImage2(designImage2)
-                    .designImage3(designImage3).designCount(designCount).build();
+                    .designImage3(designImage3).designCount(designCount)
+                    .designPrice(designPrice).designCategory(designCategory).build();
         };
     }
 
