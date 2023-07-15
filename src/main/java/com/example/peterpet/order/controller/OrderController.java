@@ -39,25 +39,6 @@ public class OrderController {
         return  BaseResponse.ok(HttpStatus.OK,"회원코드로 주문내역 조회 성공", result);
     }
 
-//    //디자인 코드로 주문 내역 조회
-//    @ApiOperation(value="디자인카테고리로 조회API", notes ="디자인의 카테고리로 디자인을 조회할 수 있다.")
-//    @Tag(name="design")
-//    @GetMapping("/select/designCategory/{designCategory}")
-//    public BaseResponse<DesignRes.selectAllDesignRes> selectAllDesignByDesignCategory(@PathVariable String designCategory){
-//        String likeDesignCategory = "%" + designCategory + "%";
-//        DesignRes.selectAllDesignRes result = designService.selectAllDesignByDesignCategory(likeDesignCategory);
-//        return  BaseResponse.ok(HttpStatus.OK,"디자인카테고리로 조회 성공", result);
-//    }
-//
-//    //디자인 가격으로 조회(가격 범위 선택)
-//    @ApiOperation(value="디자인가격으로 조회API", notes ="디자인의 가격으로 디자인을 조회할 수 있다.")
-//    @Tag(name="design")
-//    @GetMapping("/select/designPrice/{designPriceLower}/{designPriceUpper}")
-//    public BaseResponse<DesignRes.selectAllDesignRes> selectAllDesignByDesignPrice(@PathVariable int designPriceLower,@PathVariable int designPriceUpper){
-//        DesignRes.selectAllDesignRes result = designService.selectAllDesignByDesignPrice(designPriceLower, designPriceUpper);
-//        return  BaseResponse.ok(HttpStatus.OK,"디자인가격으로 조회 성공", result);
-//    }
-
     //주문 insert, update
     @ApiOperation(value="주문 업데이트API", notes ="주문 등록 및 수정")
     @Tag(name="order")
